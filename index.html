@@ -1,100 +1,58 @@
 <!DOCTYPE html>
-
-<html lang="ukr">
-
- <head>
-    <!DOCTYPE html>
-    <html lang="uk">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Landing page</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <meta name="description" content="Перша лендінг сторінка">
-        <meta name="keywords" content="Послуги, результат, індивідуальний">
-        <meta name="author" content="Bo&Li">
-    </head>
-    
-    <body>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   
     <div class="page-container">
+        <!-- Хедер з коротким описом -->
         <header>
-            <h1>Танцюй разом з нами</h1>
-            <p>Раді бачити вас тут. Дізнайтеся більше про нас.</p>
+            <h1>Танцюй з нами</h1>
+            <p>Навчіться танцювати та насолоджуйтесь рухом.</p>
         </header>
 
-        <nav class="nav-bar">
-            <a href="#">Головна</a>
-            <a href="#">Про нас</a>
-            <a href="#">Послуги</a>
-            <a href="#">Контакти</a>
-        </nav>
-
+        <!-- Основний блок про послуги -->
         <main class="content">
-            <div class="card">
-                <h2>Наші послуги</h2>
-                <p>Ми пропонуємо широкий спектр послуг, які допоможуть вам розлабитись та навчитись танцювати.</p>
-            </div>
-            <div class="card">
-                <h2>Чому ми?</h2>
-                <p>Ми завжди націлені на результат та індивідуальний підхід до кожного клієнта.</p>
-            </div>
+            <section class="card">
+                <h2>Наші Послуги</h2>
+                <!-- Кнопка для прокрутки вниз -->
+                <button onclick="scrollToDirections()">Ми пропонуємо різноманітні заняття для вашого розвитку.</button>
+            </section>
+            <section class="card">
+                <h2>Чому обирають нас</h2>
+                <p>Професіоналізм та індивідуальний підхід до кожного.</p>
+            </section>
+
+            <!-- Секція напрямків танцю -->
+            <section id="dance-directions" class="card">
+                <h2>Наші напрямки</h2>
+                <ul>
+                    <li>Сальса</li>
+                    <li>Бачата</li>
+                    <li>Кізомба</li>
+                    <li>West Coast Swing</li>
+                    <li>Хіп-хоп</li>
+                </ul>
+            </section>
         </main>
 
-        <aside>
-            <h3>Новини</h3>
-            <p>Слідкуйте за останніми оновленнями, щоб бути в курсі наших нових можливостей.</p>
-            <ul>
-                <li>Нові напрямки</li>
-                <li>Знижки на послуги до кінця місяця</li>
-                <li>Майбутні події та заходи</li>
-            </ul>
-        </aside>
-
-        <!-- Відгуки -->
-        <section class="testimonials">
-            <h2>Відгуки наших клієнтів</h2>
-            <div class="testimonial-card">
-                <p>“Відмінний сервіс, увага до кожного клієнта! Дуже задоволений результатом.”</p>
-                <p>- Василь, підримємець</p>
-            </div>
-            <div class="testimonial-card">
-                <p>“Професійний підхід і уважність до деталей.”</p>
-                <p>- Марія, вчитель</p>
-            </div>
-        </section>
-
-        <!-- Переваги -->
-        <section class="features">
-            <h2>Наші Переваги</h2>
-            <div class="feature-item">Професіоналізм</div>
-            <div class="feature-item">Висока якість послуг</div>
-            <div class="feature-item">Індивідуальний підхід</div>
-        </section>
-
-        <!-- Контактна форма -->
-        <section class="contact-form">
-            <h2>Зворотний зв'язок</h2>
-            <form>
-                <label for="name">Ім'я:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Електронна пошта:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Повідомлення:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Надіслати</button>
-            </form>
-        </section>
-
+        <!-- Футер -->
         <footer>
-            <p>Зв'яжіться з нами: info@example.com | +123 456 789</p>
-            <p>&copy; 2024 Наш Сайт. Всі права захищено.</p>
+            <p>info@example.com | +123 456 789</p>
+            <p>&copy; 2024 Наш Сайт</p>
         </footer>
     </div>
-</body>
 
+    <!-- Скрипт для плавного прокручування -->
+    <script>
+        function scrollToDirections() {
+            document.getElementById("dance-directions").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
 </html>
