@@ -3,56 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Танцюй з нами</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
    
-    <div class="page-container">
-        <!-- Хедер з коротким описом -->
+    <body>
+        <!-- Навбар -->
         <header>
-            <h1>Танцюй з нами</h1>
-            <p>Навчіться танцювати та насолоджуйтесь рухом.</p>
+          <nav class="navbar">
+            <a href="#">Головна</a>
+            <a href="#">Про нас</a>
+            <a href="#">Послуги</a>
+            <a href="#">Тренери</a>
+            <a href="#">Розклад</a>
+            <a href="#">Галерея</a>
+            <a href="#">Контакти</a>
+            </nav>
         </header>
-
-        <!-- Основний блок про послуги -->
-        <main class="content">
-            <section class="card">
-                <h2>Наші Послуги</h2>
-                <!-- Кнопка для прокрутки вниз -->
-                <button onclick="scrollToDirections()">Ми пропонуємо різноманітні заняття для вашого розвитку.</button>
-            </section>
-            <section class="card">
-                <h2>Чому обирають нас</h2>
-                <p>Професіоналізм та індивідуальний підхід до кожного.</p>
-            </section>
-
-            <!-- Секція напрямків танцю -->
-            <section id="dance-directions" class="card">
-                <h2>Наші напрямки</h2>
-                <ul>
-                    <li>Сальса</li>
-                    <li>Бачата</li>
-                    <li>Кізомба</li>
-                    <li>West Coast Swing</li>
-                    <li>Хіп-хоп</li>
-                </ul>
-            </section>
-        </main>
-
-        <!-- Футер -->
-        <footer>
-            <p>info@example.com | +123 456 789</p>
-            <p>&copy; 2024 Наш Сайт</p>
-        </footer>
-    </div>
-
-    <!-- Скрипт для плавного прокручування -->
-    <script>
-        function scrollToDirections() {
-            document.getElementById("dance-directions").scrollIntoView({ behavior: "smooth" });
-        }
-    </script>
+    
+        <!-- Головний блок з фоновим зображенням -->
+        <section class="hero">
+            <div class="content">
+                <span class="highlight">Ваша улюблена школа танців</span>
+                <h1>Танцюй з нами, відчуй ритм</h1>
+                <p>Приєднуйтесь до нас, щоб відчути захоплення танцем. Навчіться новим рухам, насолоджуйтесь атмосферою та знаходьте друзів серед наших учнів.</p>
+                <button>Записатись на заняття</button>
+            </div>
+        </section>
+    </body>
 </body>
 </html>

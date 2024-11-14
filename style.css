@@ -1,81 +1,114 @@
-@charset "UTF-8";
 /* Змінні */
-/* Напівпрозорий колір для хедера */
-/* Зменшена прозорість фону контейнера */
+:root {
+  --primary-color: rgba(204, 138, 132, 0.85); /* Напівпрозорий колір для хедера */
+  --text-color: #fff;
+  --highlight-color: #e67e22;
+  --bg-dark: rgba(0, 0, 0, 0.6); /* Темний прозорий фон для тексту */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url(images/background.jpeg);
+}
+
 /* Основні стилі */
 body {
-    background-image: url(images/background.jpeg);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: var(--text-color);
 }
 
-.page-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.4); /* Зменшена прозорість */
-  border-radius: 8px;
-  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Хедер */
-header {
-  text-align: center;
-  background-color: rgba(204, 138, 132, 0.85); /* Напівпрозорий колір */
-  color: #333;
-  padding: 30px;
-}
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-/* Контент */
-.content {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.navbar {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-.content .card {
-  background-color: rgba(255, 255, 255, 0.4); /* Зменшена прозорість */
-  padding: 20px;
-  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  text-align: center;
+  justify-content: center;
+  background-color: rgba (204, 138, 132, 0.85);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: var(--box-shadow);
+  border: 2px solid rgba(255, 255, 255, 0.4); /* Напівпрозора біла рамка */
+  border-radius: 8px; /* Закруглені кути для рамки */
 }
 
-/* Кнопка */
+.navbar a {
+  color: var(--text-color);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--highlight-color);
+}
+
+.hero {
+  background-image: url(images/background.jpeg); /* Вставте шлях до вашого фонового зображення */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark); /* Темний прозорий фон */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 40px  20px;
+  box-shadow: var(--box-shadow);
+  background-color: rgba(0, 0, 0, 0.5); /* Додаємо легкий фон для покращення читабельності */
+  border-radius: 15px; /* Закруглені кути для стилю */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* Напівпрозора біла рамка */
+}
+
+.highlight {
+  color: var(--highlight-color);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
 button {
-  background-color: rgba(204, 138, 132, 0.9); /* Напівпрозорий колір для кнопки */
-  color: #333;
-  border: none;
+  background-color: var(--highlight-color);
+  color: var(--text-color);
   padding: 10px 20px;
-  cursor: pointer;
+  border: none;
   font-size: 1em;
+  cursor: pointer;
   border-radius: 5px;
-  -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-button:hover {
-  background-color: rgba(204, 138, 132, 0.7); /* Зменшена непрозорість при наведенні */
-}
 
-/* Футер */
-footer {
-  text-align: center;
-  background-color: rgba(51, 51, 51, 0.8); /* Напівпрозорий фон для футера */
-  color: #333;
-  padding: 15px;
-  margin-top: 20px;
-  font-size: 1em;
+button:hover {
+  background-color: #cf6a1c; /* Трохи темніший відтінок для hover */
 }
