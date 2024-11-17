@@ -1,11 +1,10 @@
 /* Змінні */
 :root {
-  --primary-color: rgba(204, 138, 132, 0.85); /* Напівпрозорий колір для хедера */
+  --primary-color: rgba(204, 138, 132, 0.85); 
   --text-color: #fff;
   --highlight-color: #e67e22;
-  --bg-dark: rgba(0, 0, 0, 0.6); /* Темний прозорий фон для тексту */
+  --bg-dark: rgba(0, 0, 0, 0.6); 
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-image: url(images/background.jpeg);
 }
 
 /* Основні стилі */
@@ -14,21 +13,25 @@ body {
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: rgba (204, 138, 132, 0.85);
+  align-items: center;
   padding: 15px;
   position: fixed;
   width: 100%;
+  height: 60px;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6); 
   box-shadow: var(--box-shadow);
-  border: 2px solid rgba(255, 255, 255, 0.4); /* Напівпрозора біла рамка */
-  border-radius: 8px; /* Закруглені кути для рамки */
+  border: 2px solid rgba(255, 255, 255, 0.4); 
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .navbar a {
@@ -37,6 +40,9 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
 }
 
 .navbar a:hover {
@@ -44,7 +50,7 @@ body {
 }
 
 .hero {
-  background-image: url(images/background.jpeg); /* Вставте шлях до вашого фонового зображення */
+  background-image: url(images/background.jpeg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -55,6 +61,7 @@ body {
   text-align: center;
   padding: 20px;
   position: relative;
+  padding-top: 80px; 
 }
 
 .hero::before {
@@ -64,51 +71,55 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--bg-dark); /* Темний прозорий фон */
-  z-index: 1;
+  background-color: var(--bg-dark);
+  z-index: 0;
+  
 }
 
 .content {
   position: relative;
   z-index: 2;
   max-width: 600px;
-  padding: 40px  20px;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 15px;
   box-shadow: var(--box-shadow);
-  background-color: rgba(0, 0, 0, 0.5); /* Додаємо легкий фон для покращення читабельності */
-  border-radius: 15px; /* Закруглені кути для стилю */
-  border: 2px solid rgba(255, 255, 255, 0.4); /* Напівпрозора біла рамка */
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-.highlight {
-  color: var(--highlight-color);
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  display: block;
-}
+@media (max-width: 768px) {
+  .navbar {
+    
+    flex-direction: column; 
+    align-items: center;
+    padding: 5px 10px;
+    height: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
 
-h1 {
-  font-size: 2.5em;
-  margin: 0.5em 0;
-  line-height: 1.2;
-}
+  .navbar a {
+    margin: 3px 0; 
+    padding: 8px 15px; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 1em; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+  }
 
-p {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
-}
+  .navbar a:last-child {
+    border-bottom: none; 
+  }
 
-button {
-  background-color: var(--highlight-color);
-  color: var(--text-color);
-  padding: 10px 20px;
-  border: none;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
+  .hero {
+    padding-top: 90px;
+  }
 
-button:hover {
-  background-color: #cf6a1c; /* Трохи темніший відтінок для hover */
+  .content {
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+ 
 }
